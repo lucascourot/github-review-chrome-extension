@@ -20,4 +20,4 @@ document.addEventListener('DOMContentLoaded', () => {
         message.value = `:gear: MEP \`${org}/${repo}\` "${title}" ${url}`;
         message.select();
     });
-});``
+});

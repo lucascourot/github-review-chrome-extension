@@ -9,15 +9,25 @@ document.addEventListener('DOMContentLoaded', () => {
             };
         } + ')()'
     }, (results) => {
-        const result = results[0];
-        const message = document.getElementById('message');
+        const messageElement = document.getElementById('message');
+        const prefixElement = document.getElementById('prefix');
 
+        const result = results[0];
         const title = result.title.trim();
         const org = result.org.trim();
         const repo = result.repo.trim();
         const url = result.url.trim();
 
-        message.value = `:gear: MEP \`${org}/${repo}\` "${title}" ${url}`;
-        message.select();
+        const refreshMessage = (prefix) => {
+            const icon = prefix === 'MEP' ? ':gear:' : ':information_source:';
+            messageElement.value = `${icon} ${prefix} \`${org}/${repo}\` "${title}" ${url}`;
+            messageElement.select();
+        };
+
+        prefixElement.onchange = () => {
+            refreshMessage(prefixElement.value);
+        };
+
+        refreshMessage(prefixElement.value);
     });
 });

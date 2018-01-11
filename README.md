@@ -1,5 +1,9 @@
 # Github review
 
+<p align="center">
+    <img src="https://github.m6web.fr/raw/l-courot/github-review/master/screenshot.png" alt="screenshot" />
+</p>
+
 ## Install
 
  - Clone this repo
